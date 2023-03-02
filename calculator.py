@@ -1,19 +1,34 @@
-#calculator 
-x,y=map(int, input("enter two numbers ").split())
-print("1.addition\n2.substraction\n3.multiply\n4.divide")
-choice=int(input("enter the operation you want to perform"))
-if choice==1:
-    print(x+y)
-elif choice==2:
-    print(x-y)
-elif choice==3:
-    print(x*y)
-elif choice==4:
-    print(x/y)
-    print(x//y)
-else:
-    print("invalid choice")
+#calculator
+while True: 
+    x,y=map(int, input("enter two numbers ").split())
+    print("1.addition\n2.substraction\n3.multiply\n4.divide")
+    choice=int(input("enter the operation you want to perform"))
+    f=open("history.txt","w")
+    if choice==1:
+        a=x+y
+        print(a)
+        f.write(str(a))
+    elif choice==2:
+        a=x-y
+        print(a)
+        f.write(str(a))
+    elif choice==3:
+        a=x*y
+        print(a)
+        f.write(str(a))
+    elif choice==4:
+        a=x/y
+        print(a)
+        f.write(str(a))
+    else:
+        print("invalid choice")
+        break
+    if input("continue ?").lower()=="no":
+        break
+    f.close()
+    
 
+'''
 #list examples
 A=[34,56,12]
 print(A)
@@ -63,4 +78,4 @@ print(qbank[1]["cans"])
 
 
 
-
+'''
